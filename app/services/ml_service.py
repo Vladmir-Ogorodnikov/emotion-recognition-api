@@ -57,6 +57,8 @@ class EmotionModel:
 
 
     def _preprocess(self, image : Image.Image) -> torch.tensor:
+
+        image = image.convert("RGB")
         
         inputs = self.processor(images=image, return_tensors="pt")
     
